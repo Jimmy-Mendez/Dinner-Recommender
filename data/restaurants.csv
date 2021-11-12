@@ -1,6 +1,12 @@
-,Place Name,Place ID,Latitude,Longitude,Rating,Types,Vicinity
-0,Skampa,ChIJG9YVj7lw44kRzUo4B-yKwa0,42.3713637,-71.08327919999999,4.4,"['meal_delivery', 'restaurant', 'food', 'point_of_interest', 'establishment']","424 Cambridge St, Cambridge"
-1,Courthouse Seafood,ChIJ_WQx8Llw44kRSrnAbnJIPVw,42.37153139999999,-71.0846084,4.6,"['restaurant', 'food', 'point_of_interest', 'establishment']","498 Cambridge St, Cambridge"
-2,Le's,ChIJpVeSkLlw44kRXezHHO7FtKg,42.3716376,-71.0832847,4.3,"['restaurant', 'food', 'point_of_interest', 'establishment']","425-429, Cambridge St, Cambridge"
-3,Arams #2 House of Pizza,ChIJ17Iccrlw44kRjyr17EUJLqA,42.3714592,-71.0816846,4.5,"['meal_delivery', 'meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']","345 Cambridge St, Cambridge"
-4,9Zaab Thai Street Food,ChIJUfW85Ntx44kRaqsVjhvNGZg,42.3719262,-71.08578059999999,4.5,"['restaurant', 'food', 'point_of_interest', 'establishment']","569 Cambridge St, Cambridge"
+,Restaurant,ID,Latitude,Longitude,Rating,Types,Vicinity
+0,Dali,ChIJ5VK6SUh344kRL0BQ8IHUU6A,42.378346,-71.10673129999999,4.6,"['restaurant', 'food', 'point_of_interest', 'establishment']","415 Washington St, Somerville"
+1,Moona,ChIJqfn_hUt344kR6yARKCdjYnA,42.3741286,-71.10112029999999,4.6,"['restaurant', 'food', 'point_of_interest', 'establishment']","243 Hampshire St, Cambridge"
+2,Trina's Starlite Lounge,ChIJQzD1jUt344kR8KP5-ERQFlM,42.3745196,-71.1015737,4.7,"['bar', 'restaurant', 'food', 'point_of_interest', 'establishment']","3 Beacon St, Somerville"
+3,Thai Hut Restaurant,ChIJD_LIHb5344kR615bl1m2Ylk,42.3773166,-71.1048766,3.9,"['restaurant', 'food', 'point_of_interest', 'establishment']","93 Beacon St, Somerville"
+4,Olé,ChIJo2fFeEt344kRPbmH6CI5-1k,42.374064,-71.100155,4.3,"['bar', 'restaurant', 'food', 'point_of_interest', 'establishment']","11 Springfield St, Cambridge"
+5,FAB Somerville,ChIJvSR-s0l344kRsBXMvAxZa2U,42.3781194,-71.1063806,4.4,"['bar', 'restaurant', 'food', 'point_of_interest', 'establishment']","118 Beacon St, Somerville"
+6,Punjabi Dhaba,ChIJ8S9uh0t344kRiynDOgUzVPg,42.3738889,-71.10083329999999,4.1,"['meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']","225 Hampshire St, Cambridge"
+7,Angelos Pizza,ChIJL3jCCkV344kRC28NxBrpSC0,42.3730217,-71.1107777,4.7,"['restaurant', 'food', 'point_of_interest', 'establishment']","444 Broadway, Cambridge"
+8,Mona Lisa Pizza,ChIJVeMUVk9344kRDWaBK9rY-Cw,42.3749008,-71.1091172,3.9,"['meal_delivery', 'meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']","1625 Cambridge St, Cambridge"
+9,The Kebab Factory - An Indian Bistro,ChIJlzllSUh344kR8n3V3pTtG5A,42.3781475,-71.10649029999999,3.9,"['meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']","414 Washington St, Somerville"
+10,Pita Cambridge,ChIJ-yVYgUt344kRLGUJ2BSPvYg,42.3740491,-71.1005657,4.3,"['restaurant', 'food', 'point_of_interest', 'establishment']","12 Springfield St, Cambridge"
