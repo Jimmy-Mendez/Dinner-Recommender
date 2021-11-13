@@ -23,6 +23,10 @@ window.show()
 # 5. Run your application's event loop (or main loop)
 sys.exit(app.exec_())
 
+#replace commas with '%2C'
+#webpage: google.com/search?q=name+vicinity
+#class=YhmCb
+
 ###########################################################
 
 adventure = input("Are you feeling adventurous? (1 = yes, 0 = no): ")
