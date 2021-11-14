@@ -1,27 +1,34 @@
-# import libraries
 from urllib.request import Request, urlopen
+import pandas as pd
 from bs4 import BeautifulSoup
+import re
 
-# specify the url
-url = "http://google.com/search?q=Skampa+Cambridge"
-
-# Connect to the website and return the html to the variable ‘page’
-try:
-    req = Request(url, headers={'User-Agent':'Mozilla/5.0'})
-    page = urlopen(req)
-    # parse the html using beautiful soup and store in variable `soup`
-    soup = BeautifulSoup(page, 'html.parser')
-    # Take out the <div> of name and get its value
-    content = soup.find("div", {"class":"BNeawe tAd8D AP7Wnd"})
-    article = ''
-    if content is not None:
-        article = content
-        print(article)
-    else:
-        print("None")
-    # Saving the scraped text
-    with open('scraped_text.txt', 'w') as file:
-        file.write(str(article))
-except:
-    print("Error opening the URL")
+def getCategory(data, name_var, addr_var):
+    data['category'] = ""
+    count = 0
+    for restaurant in data[name_var]:
+        url_head = "http://google.com/search?q="
+        name_string=data.at[count,name_var].replace(',','%2C').replace('\'','%27').replace(' ','+')
+        addr_string=data.at[count,addr_var].replace(',','%2C').replace('\'','%27').replace(' ','+')
+        url = url_head+name_string+addr_string
+        try:
+            req = Request(url, headers={'User-Agent':'Mozilla/5.0'})
+            page = urlopen(req)
+            # parse the html using beautiful soup and store in variable `soup`
+            soup = BeautifulSoup(page, 'html.parser')
+            # Take out the <div> of name and get its value
+            content = soup.find("div", {"class":"BNeawe tAd8D AP7Wnd"})
+            article = "None"
+            category = ''
+            if content is not None:
+                article = str(content)
+            if ')</span> </span>' in article:
+                category = article.split(')</span> </span>')[1] 
+                category = category.replace('</div>','')
+            # Saving the scraped text
+            data.at[count,'category'] = category
+        except:
+            data.at[count,'category'] = "NA"
+        count+=1
+    data.to_csv("data/restaurants_cat.csv", index = False) 
 

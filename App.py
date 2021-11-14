@@ -1,31 +1,33 @@
 import sys
+import os
+import pandas as pd
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QWidget
+from getDinner import makeData
+from getCategory import getCategory
 
-app = QApplication(sys.argv)
+os.chdir("C:/Users/Jmen3/Desktop/Programs/Python/Dinner Recommender/")
 
-window = QWidget()
-window.setWindowTitle('PyQt5 App')
-window.setGeometry(200, 200, 280, 80)
-window.move(60, 15)
-helloMsg = QLabel('<h1>Hello World!</h1>', parent=window)
-helloMsg.move(60, 15)
-layout = QHBoxLayout()
-layout.addWidget(QPushButton('Left'))
-layout.addWidget(QPushButton('Center'))
-layout.addWidget(QPushButton('Right'))
-window.setLayout(layout)
-window.show()
+# app = QApplication(sys.argv)
 
-# 5. Run your application's event loop (or main loop)
-sys.exit(app.exec_())
+# window = QWidget()
+# window.setWindowTitle('PyQt5 App')
+# window.setGeometry(200, 200, 280, 80)
+# window.move(60, 15)
+# helloMsg = QLabel('<h1>Hello World!</h1>', parent=window)
+# helloMsg.move(60, 15)
+# layout = QHBoxLayout()
+# layout.addWidget(QPushButton('Left'))
+# layout.addWidget(QPushButton('Center'))
+# layout.addWidget(QPushButton('Right'))
+# window.setLayout(layout)
+# window.show()
 
-#replace commas with '%2C'
-#webpage: google.com/search?q=name+vicinity
-#class=YhmCb
+# # 5. Run your application's event loop (or main loop)
+# sys.exit(app.exec_())
 
 ###########################################################
 
@@ -34,5 +36,7 @@ distance = input("Max distance (in miles): ")
 category = input("Categories?: ")
 price = input("Price Range?: ")
 
-
 makeData(adventure,distance,category, price)
+restaurants = pd.read_csv("data/restaurants.csv") 
+getCategory(restaurants,'Restaurant', 'Vicinity')
+

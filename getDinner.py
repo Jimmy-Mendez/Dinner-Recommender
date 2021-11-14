@@ -1,4 +1,7 @@
 from api_key import key
+
+##GET NEW API KEY
+
 from get_location import coordinate
 keyword = 'restaurant'
 
@@ -15,10 +18,9 @@ os.chdir("C:/Users/Jmen3/Desktop/Programs/Python/Dinner Recommender/")
 
 
 def makeData(adv,dis,cat, price):
-    radius = dis*1609.34
+    radius = int(float(dis)*1609.34)
     url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+coordinate+'&radius='+str(radius)+'&keyword='+str(keyword)+'&key='+str(api_key)
     while True:
-        print(url)
         respon = requests.get(url)
         jj = json.loads(respon.text)
         results = jj['results']
@@ -33,7 +35,6 @@ def makeData(adv,dis,cat, price):
             vicinity = result['vicinity']
             data = [name, place_id, lat, lng, rating, types, vicinity]
             final_data.append(data)
-            time.sleep(5)
         if 'next_page_token' not in jj:
             break
         else:
@@ -41,6 +42,6 @@ def makeData(adv,dis,cat, price):
             url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key='+str(api_key)+'&pagetoken='+str(next_page_token)
     labels = ['Restaurant','ID', 'Latitude', 'Longitude','Rating', 'Types', 'Vicinity']
     export_dataframe_1_medium = pd.DataFrame.from_records(final_data, columns=labels)
-    export_dataframe_1_medium.to_csv('data/restaurants.csv')
+    export_dataframe_1_medium.to_csv('data/restaurants.csv', index = False)
 
 
