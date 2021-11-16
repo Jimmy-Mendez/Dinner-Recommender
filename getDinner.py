@@ -41,7 +41,7 @@ def makeData(adv,dis,cat, price):
             next_page_token = jj['next_page_token']
             url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key='+str(api_key)+'&pagetoken='+str(next_page_token)
     labels = ['Restaurant','ID', 'Latitude', 'Longitude','Rating', 'Types', 'Vicinity']
-    export_dataframe_1_medium = pd.DataFrame.from_records(final_data, columns=labels)
-    export_dataframe_1_medium.to_csv('data/restaurants.csv', index = False)
+    rest_data = pd.DataFrame.from_records(final_data, columns=labels)
+    return rest_data
 
 

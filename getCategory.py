@@ -24,11 +24,11 @@ def getCategory(data, name_var, addr_var):
                 article = str(content)
             if ')</span> </span>' in article:
                 category = article.split(')</span> </span>')[1] 
-                category = category.replace('</div>','')
+                category = category.replace('</div>','').replace('\n','')
             # Saving the scraped text
             data.at[count,'category'] = category
         except:
             data.at[count,'category'] = "NA"
         count+=1
-    data.to_csv("data/restaurants_cat.csv", index = False) 
+    return data 
 
