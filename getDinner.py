@@ -17,7 +17,7 @@ final_data = []
 os.chdir("C:/Users/Jmen3/Desktop/Programs/Python/Dinner Recommender/")
 
 
-def makeData(adv,dis,cat, price):
+def makeData(dis):
     radius = int(float(dis)*1609.34)
     url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+coordinate+'&radius='+str(radius)+'&keyword='+str(keyword)+'&key='+str(api_key)
     while True:
