@@ -30,6 +30,7 @@ class resultsWindow(QWidget):
         super(resultsWindow, self).__init__()
         layout = QVBoxLayout()
         results.append(chooseRestaurant(inputs[0],inputs[1],inputs[2]))
+        ## add line to get another result if already in results
         self.label = QLabel("The result is: \n" + str(results[-1]) + "\n Press ok if you decide to go here!")
         self.buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         self.buttonBox.accepted.connect(self.storeRestaurant)

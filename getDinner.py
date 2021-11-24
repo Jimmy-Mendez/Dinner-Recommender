@@ -25,7 +25,6 @@ def makeData(dis):
         jj = json.loads(respon.text)
         results = jj['results']
         for result in results:
-            print(result)
             name = result['name']
             place_id = result ['place_id']
             lat = result['geometry']['location']['lat']
