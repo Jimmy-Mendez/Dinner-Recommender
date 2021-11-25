@@ -1,22 +1,13 @@
 import sys
 import os
 import pandas as pd
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QHBoxLayout
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtWidgets import (QCheckBox, QGridLayout, QGroupBox, QMenu, QRadioButton, QVBoxLayout, QSlider)
 from PyQt5.QtCore import Qt
 from visited import past
 from choose import chooseRestaurant
-
-os.chdir("C:/Users/Jmen3/Desktop/Programs/Python/Dinner Recommender/")
-
-# importing libraries
 from PyQt5.QtWidgets import *
 import sys
+
+os.chdir("C:/Users/Jmen3/Desktop/Programs/Python/Dinner Recommender/")
 
 inputs = []
 results = []
@@ -30,7 +21,7 @@ class resultsWindow(QWidget):
         super(resultsWindow, self).__init__()
         layout = QVBoxLayout()
         results.append(chooseRestaurant(inputs[0],inputs[1],inputs[2]))
-        ## add line to get another result if already in results
+        ## TO DO: add line to get another result if already in results
         self.label = QLabel("The result is: \n" + str(results[-1]) + "\n Press ok if you decide to go here!")
         self.buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         self.buttonBox.accepted.connect(self.storeRestaurant)

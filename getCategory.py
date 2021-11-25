@@ -30,5 +30,6 @@ def getCategory(data, name_var, addr_var):
         except:
             data.at[count,'category'] = "NA"
         count+=1
+        print(data)
     return data 
 
